@@ -1,12 +1,12 @@
 # AWS Services Learning Progress Dashboard
 
-Track your journey to AWS mastery across 100+ services and 486 learning objectives.
+Track your journey to AWS mastery across 100+ services and 619 learning objectives.
 
 ## Features
 
 - 📊 Interactive dashboard with real-time progress tracking
-- 💻 14 major AWS service categories
-- ✅ 486 individual learning objectives
+- 💻 17 major AWS service categories
+- ✅ 619 individual learning objectives
 - 📈 Visual progress charts and statistics
 - 💾 LocalStorage persistence (progress saved automatically)
 - 📥 Export progress to CSV
@@ -26,7 +26,9 @@ Track your journey to AWS mastery across 100+ services and 486 learning objectiv
 10. **Containers & Orchestration** (17 objectives) - ECS, EKS, ECR, etc.
 11. **Serverless Services** (12 objectives) - Lambda, Step Functions, API Gateway, etc.
 12. **Machine Learning & AI** (28 objectives) - SageMaker, Rekognition, etc.
-13. **Cost Optimization** (36 objectives) - Best practices and strategies
+13. **Architecture Patterns** (38 objectives) - Solution stacks and best practices
+14. **Cost Optimization** (50 objectives) - Best practices and strategies
+15. **AWS Free Tier Services** (45 objectives) - Always free, 12-month free, and trial services
 
 ## Usage
 
