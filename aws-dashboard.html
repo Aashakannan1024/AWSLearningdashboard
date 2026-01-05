@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Services Learning Progress Dashboard</title>
+    <link rel="stylesheet" href="aws-dashboard.css">
+`qqqqqqqqqqqqqqqqqqq    </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AWS Services Learning Progress Dashboard</h1>
+            <p>Track your journey to AWS mastery across 100+ services and 486 learning objectives</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('dashboard')">📊 Dashboard</button>
+            <button class="tab" onclick="showTab('compute')">💻 Compute (40)</button>
+            <button class="tab" onclick="showTab('storage')">💾 Storage (47)</button>
+            <button class="tab" onclick="showTab('database')">🗄️ Database (56)</button>
+            <button class="tab" onclick="showTab('networking')">🌐 Networking (57)</button>
+            <button class="tab" onclick="showTab('security')">🔒 Security (33)</button>
+            <button class="tab" onclick="showTab('management')">⚙️ Management (30)</button>
+            <button class="tab" onclick="showTab('analytics')">📈 Analytics (24)</button>
+            <button class="tab" onclick="showTab('integration')">🔗 Integration (24)</button>
+            <button class="tab" onclick="showTab('devtools')">🛠️ Dev Tools (16)</button>
+            <button class="tab" onclick="showTab('containers')">📦 Containers (17)</button>
+            <button class="tab" onclick="showTab('serverless')">⚡ Serverless (12)</button>
+            <button class="tab" onclick="showTab('ml')">🤖 ML & AI (28)</button>
+            <button class="tab" onclick="showTab('cost')">💰 Cost Opt (36)</button>
+        </div>
+        
+        <div id="dashboard" class="tab-content active">
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <h3>Overall Progress</h3>
+                    <div class="value" id="overall-percentage">0%</div>
+                    <div class="label"><span id="completed-total">0</span> of 486 completed</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="overall-progress" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Services Mastered</h3>
+                    <div class="value" id="services-mastered">0</div>
+                    <div class="label">out of 14 major categories</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Learning Streak</h3>
+                    <div class="value">🔥</div>
+                    <div class="label">Keep going!</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Estimated Time</h3>
+                    <div class="value" id="time-remaining">6-12</div>
+                    <div class="label">months to mastery</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Progress by Category</div>
+                <div class="bar-chart" id="category-chart"></div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color beginner"></div>
+                    <span>Beginner (0-3 months)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color intermediate"></div>
+                    <span>Intermediate (3-6 months)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color advanced"></div>
+                    <span>Advanced (6-12 months)</span>
+                </div>
+            </div>
+            
+            <button class="export-btn" onclick="exportData()">📥 Export Progress (CSV)</button>
+            <button class="reset-btn" onclick="resetProgress()">🔄 Reset All Progress</button>
+        </div>
+        
+        <div id="compute" class="tab-content">
+            <div class="category-header">
+                <h2>💻 Compute Services</h2>
+                <div class="category-progress">
+                    <span id="compute-progress-text">0/40</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="compute-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="compute-content"></div>
+        </div>
+        
+        <div id="storage" class="tab-content">
+            <div class="category-header">
+                <h2>💾 Storage Services</h2>
+                <div class="category-progress">
+                    <span id="storage-progress-text">0/47</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="storage-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="storage-content"></div>
+        </div>
+        
+        <div id="database" class="tab-content">
+            <div class="category-header">
+                <h2>🗄️ Database Services</h2>
+                <div class="category-progress">
+                    <span id="database-progress-text">0/56</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="database-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="database-content"></div>
+        </div>
+        
+        <div id="networking" class="tab-content">
+            <div class="category-header">
+                <h2>🌐 Networking & Content Delivery</h2>
+                <div class="category-progress">
+                    <span id="networking-progress-text">0/57</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="networking-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="networking-content"></div>
+        </div>
+        
+        <div id="security" class="tab-content">
+            <div class="category-header">
+                <h2>🔒 Security, Identity & Compliance</h2>
+                <div class="category-progress">
+                    <span id="security-progress-text">0/33</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="security-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="security-content"></div>
+        </div>
+        
+        <div id="management" class="tab-content">
+            <div class="category-header">
+                <h2>⚙️ Management & Governance</h2>
+                <div class="category-progress">
+                    <span id="management-progress-text">0/30</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="management-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="management-content"></div>
+        </div>
+        
+        <div id="analytics" class="tab-content">
+            <div class="category-header">
+                <h2>📈 Analytics Services</h2>
+                <div class="category-progress">
+                    <span id="analytics-progress-text">0/24</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="analytics-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="analytics-content"></div>
+        </div>
+        
+        <div id="integration" class="tab-content">
+            <div class="category-header">
+                <h2>🔗 Application Integration</h2>
+                <div class="category-progress">
+                    <span id="integration-progress-text">0/24</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="integration-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="integration-content"></div>
+        </div>
+        
+        <div id="devtools" class="tab-content">
+            <div class="category-header">
+                <h2>🛠️ Developer Tools</h2>
+                <div class="category-progress">
+                    <span id="devtools-progress-text">0/16</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="devtools-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="devtools-content"></div>
+        </div>
+        
+        <div id="containers" class="tab-content">
+            <div class="category-header">
+                <h2>📦 Containers & Orchestration</h2>
+                <div class="category-progress">
+                    <span id="containers-progress-text">0/17</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="containers-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="containers-content"></div>
+        </div>
+        
+        <div id="serverless" class="tab-content">
+            <div class="category-header">
+                <h2>⚡ Serverless Services</h2>
+                <div class="category-progress">
+                    <span id="serverless-progress-text">0/12</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="serverless-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="serverless-content"></div>
+        </div>
+        
+        <div id="ml" class="tab-content">
+            <div class="category-header">
+                <h2>🤖 Machine Learning & AI</h2>
+                <div class="category-progress">
+                    <span id="ml-progress-text">0/28</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="ml-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="ml-content"></div>
+        </div>
+        
+        <div id="cost" class="tab-content">
+            <div class="category-header">
+                <h2>💰 Cost Optimization Strategies</h2>
+                <div class="category-progress">
+                    <span id="cost-progress-text">0/36</span>
+                    <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-fill" id="cost-progress">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div id="cost-content"></div>
+        </div>
+    </div>
+
+    <script src="aws-dashboard.js"></script>
+</body>
+</html>
