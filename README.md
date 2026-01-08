@@ -4,13 +4,13 @@ Track your journey to AWS mastery across 100+ services and 619 learning objectiv
 
 ## Features
 
-- 📊 Interactive dashboard with real-time progress tracking
-- 💻 17 major AWS service categories
-- ✅ 619 individual learning objectives
-- 📈 Visual progress charts and statistics
-- 💾 LocalStorage persistence (progress saved automatically)
-- 📥 Export progress to CSV
-- 🔄 Reset functionality
+- Interactive dashboard with real-time progress tracking
+- 17 major AWS service categories
+- 619 individual learning objectives
+- Visual progress charts and statistics
+- LocalStorage persistence (progress saved automatically)
+- Export progress to CSV
+- Reset functionality
 
 ## Categories Covered
 
